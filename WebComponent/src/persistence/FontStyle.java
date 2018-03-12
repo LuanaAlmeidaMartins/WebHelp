@@ -14,7 +14,7 @@ public class FontStyle {
 	public FontStyle() {
 
 		try {
-			p.load(new FileInputStream(/*System.getProperty("user.dir") + "/fontSize.txt"*/"properties.txt"));
+			p.load(new FileInputStream(/*System.getProperty("user.dir") + "/properties.txt"*/"properties.txt"));
 		} catch (FileNotFoundException e) {
 			System.out.println("Arquivo properties.txt nao encontrado");
 		} catch (IOException e) {

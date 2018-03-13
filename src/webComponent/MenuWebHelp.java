@@ -9,6 +9,7 @@ import java.util.Properties;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -52,5 +53,12 @@ public class MenuWebHelp {
 	
 	public void estilo(ColorPicker colorPicker) {
 		colorPicker.setStyle(p.getProperty("colorpicker"));
+	}
+
+	public void estilo(MenuButton menuButton) {
+		File file = new File(p.getProperty(menuButton.getId()));
+		Image image = new Image(file.toURI().toString(), 48, 48, false, false);
+		menuButton.setGraphic(new ImageView(image));
+		
 	}
 }

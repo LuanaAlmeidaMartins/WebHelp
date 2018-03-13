@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class FontStyle {
+public class Tags {
 	private ArrayList<String> tags = new ArrayList<String>();
 	Properties p = new Properties();
 
-	public FontStyle() {
+	public Tags() {
 
 		try {
 			p.load(new FileInputStream(/*System.getProperty("user.dir") + "/properties.txt"*/"properties.txt"));

@@ -33,6 +33,7 @@ public class NavigationBar extends HBox {
 
 		// Create the TextField
 		TextField pageUrl = new TextField();
+		pageUrl.setText(homePageUrl);
 
 		
 
@@ -127,12 +128,10 @@ public class NavigationBar extends HBox {
 				}
 			}
 		);
-
-
+		
 		this.getChildren().addAll(backButton, forwardButton, refreshButton, pageUrl);
 
 		if (goToHomePage){
-			// Load the URL
 			webEngine.load(homePageUrl);
 		}
 	}

@@ -2,7 +2,6 @@ package util;
 
 public class ItalicStatus{
 
-
 	private boolean italic = false;
 	
 	public void setItalic() {

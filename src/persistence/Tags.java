@@ -11,7 +11,7 @@ public class Tags {
 	private ArrayList<String> tags = new ArrayList<String>();
 	Properties p = new Properties();
 
-	public Tags() {
+	public Tags(String property) {
 
 		try {
 			p.load(new FileInputStream(/*System.getProperty("user.dir") + "/properties.txt"*/"properties.txt"));
@@ -20,7 +20,7 @@ public class Tags {
 		} catch (IOException e) {
 			System.out.println("IO");
 		}
-		tags.addAll(Arrays.asList(p.getProperty("tags").split(" ")));
+		tags.addAll(Arrays.asList(p.getProperty(property).split(" ")));
 	}
 
 	public ArrayList<String> getTagsName(){

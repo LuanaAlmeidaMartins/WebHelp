@@ -9,36 +9,43 @@ import persistence.Tags;
 
 public class Status {
 	
-	private ArrayList<String> ArrayOfStyle = new ArrayList<String>();
+	private ArrayList<String> ArrayOfGeneralStyle = new ArrayList<String>();
 	private ArrayList<String> tags = new ArrayList<String>();
 	private Document doc;
+	private ArrayList<String> headers = new ArrayList<String>();
+	private ArrayList<String> paragraph = new ArrayList<String>();
 	
 	public Status(Document doc) {
-		Tags tags = new Tags();
+		Tags tags = new Tags("tags");
 		this.tags = tags.getTagsName();
+		Tags headers = new Tags("headers");
+		this.headers  = headers.getTagsName();
+		Tags paragraph = new Tags("paragraph");
+		this.paragraph  = paragraph.getTagsName();
 		this.doc = doc;
 	}
 	
 	public void setFontStyle(String applyStyle, Boolean status) {
 		if(status) {
-			this.ArrayOfStyle.add(applyStyle);
-			System.out.println("if "+this.ArrayOfStyle+" "+status);
+			this.ArrayOfGeneralStyle.add(applyStyle);
+			System.out.println("if "+this.ArrayOfGeneralStyle+" "+status);
 		} 
 		else {
-			for(int i = 0; i < ArrayOfStyle.size();i++) {
-				if(ArrayOfStyle.get(i).equals(applyStyle)) {
-					ArrayOfStyle.remove(i);
-					System.out.println("else "+this.ArrayOfStyle+" "+status);
+			for(int i = 0; i < ArrayOfGeneralStyle.size();i++) {
+				if(ArrayOfGeneralStyle.get(i).equals(applyStyle)) {
+					ArrayOfGeneralStyle.remove(i);
+					System.out.println("else "+this.ArrayOfGeneralStyle+" "+status);
 				}
 			}
 		}	
 		applyStyle();
 	}
 	
+	
 	public String getFontStyle() {
 		String style = "";
-		for(int i = 0; i < ArrayOfStyle.size();i++) {
-			style+=ArrayOfStyle.get(i);
+		for(int i = 0; i < ArrayOfGeneralStyle.size();i++) {
+			style+=ArrayOfGeneralStyle.get(i);
 		}
 		return style;
 	}
@@ -51,22 +58,5 @@ public class Status {
 				element.setAttribute("style", getFontStyle());
 			}
 		}
-	}
-
-	public void setFontStyle(String applyStyle, String removeStyle, boolean status) {
-		if(!status) {
-			ArrayOfStyle.add(applyStyle);
-			System.out.println("if "+ArrayOfStyle+" "+status);
-		} 
-		else {
-			for(int i = 0; i < ArrayOfStyle.size();i++) {
-				if(ArrayOfStyle.get(i).equals(removeStyle)) {
-					ArrayOfStyle.remove(i);
-					ArrayOfStyle.add(applyStyle);
-					System.out.println("else "+this.ArrayOfStyle+" "+status);
-				}
-			}
-		}	
-		applyStyle();
 	}
 }

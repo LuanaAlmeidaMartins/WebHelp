@@ -1,11 +1,8 @@
 package util;
 
-import util.FontFamilyStatus.FontFamilyEnum;
-
 public class FontFamilyStatus {
 	private boolean status = false;
 	private String defaultOption = "font-family: opendyslexic;";
-	int count = 0;
 	
 	public enum FontFamilyEnum {
 
@@ -30,12 +27,11 @@ public class FontFamilyStatus {
 		this.status = !status;
 	}
 	
-	public String setOptionFamily() {
+	public void setOptionFamily() {
 		if(this.status==false) {
 			this.status = !status;
 			System.out.println("entrou if "+this.status);
 		}
-		return defaultOption;
 	}
 	
 	public String getFamilyFont(int type) {

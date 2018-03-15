@@ -10,7 +10,7 @@ public class LineSpacingStatus {
 		lineSimples(4), line15(3), line5(2), linhaDupla(1), none(0);
 
 		private final int valueOfFont;
-		
+
 		LineSpacingEnum(int value) {
 			valueOfFont = value;
 		}
@@ -40,16 +40,15 @@ public class LineSpacingStatus {
 		if (type == LineSpacingEnum.lineSimples.getLineSpacing()) {
 			defaultOption = "line-height: 1em;";
 		}
-		 if(type == LineSpacingEnum.line15.getLineSpacing()) {
-		 defaultOption = "line-height: 1.15em;";
-		 }
-		 if(type == LineSpacingEnum.line5.getLineSpacing()) {
-		 defaultOption = "line-height: 1.5em;";
-		 }
-		 if(type == LineSpacingEnum.linhaDupla.getLineSpacing()) {
-		 defaultOption = "line-height: 2em;";
-		 }
+		if(type == LineSpacingEnum.line15.getLineSpacing()) {
+			defaultOption = "line-height: 1.15em;";
+		}
+		if(type == LineSpacingEnum.line5.getLineSpacing()) {
+			defaultOption = "line-height: 1.5em;";
+		}
+		if(type == LineSpacingEnum.linhaDupla.getLineSpacing()) {
+			defaultOption = "line-height: 2em;";
+		}
 		return defaultOption;
 	}
-
 }

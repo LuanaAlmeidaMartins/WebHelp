@@ -1,3 +1,3 @@
-tags = h1 h2 h3 h4 h5 h6 ul ol li dir dl dd table caption th tr td thead tbody tfoot col colgroup span header footer main section article aside details dialog summary data a link nav strong sub sup s small i b em dfn code cite center blockquote big p 
+tags = h1 h2 h3 h4 h5 h6 p ul ol li dir dl dd table caption th tr td thead tbody tfoot col colgroup span header footer main section article aside details dialog summary data a link nav strong sub sup s small i b em dfn code cite center blockquote big p
 paragraph = p
 headers = h1 h2 h3 h4 h5 h6

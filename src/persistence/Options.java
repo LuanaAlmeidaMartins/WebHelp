@@ -4,15 +4,17 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+import util.FontSize;
+
 public class Options {
 	
-	ArrayList<Font> enorme = new ArrayList<Font>();
-	ArrayList<Font> grande = new ArrayList<Font>();
-	ArrayList<Font> medio = new ArrayList<Font>();
-	ArrayList<Font> pequeno = new ArrayList<Font>();
+	ArrayList<FontSize> enorme = new ArrayList<FontSize>();
+	ArrayList<FontSize> grande = new ArrayList<FontSize>();
+	ArrayList<FontSize> medio = new ArrayList<FontSize>();
+	ArrayList<FontSize> pequeno = new ArrayList<FontSize>();
 
 	@SuppressWarnings("resource")
-	public ArrayList<Font> FillOptions(int type) {
+	public ArrayList<FontSize> FillOptions(int type) {
 		try {
 			String array[] = new String[5];
 			
@@ -23,7 +25,7 @@ public class Options {
 		    int i = 0;
 	        while ((readLine = read.readLine()) != null) {
 	            	array = readLine.split(" ");
-	            	enorme.add(new Font(array[i], array[i+type]));
+	            	enorme.add(new FontSize(array[i], array[i+type]));
 	            }
 		} catch (Exception e) {
 			System.err.println("File not found");
@@ -31,10 +33,4 @@ public class Options {
 		return enorme;
 	}
 	
-	public void print() {
-		for (int i = 0; i < enorme.size(); i++) {
-			System.out.println("Enorme\n"+enorme.get(i).tagName+"  "+enorme.get(i).getSize());
-		}
-		System.out.println();
-	}
 }

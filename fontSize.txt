@@ -1,4 +1,4 @@
-p 14pt; 18pt; 22pt; 28pt;
+body 14pt; 18pt; 22pt; 28pt;
 h1 29.4pt; 37.8pt; 46.2pt; 58.8pt;
 h2 26.5pt; 34.3pt; 41.8pt; 53pt; 
 h3 23.8pt; 30.6pt; 37.4pt; 47.6pt; 

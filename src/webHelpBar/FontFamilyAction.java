@@ -46,24 +46,28 @@ public class FontFamilyAction extends HBox{
 				});
 
 				openDyslexic.setOnAction(actionEvent -> {
+					WebHelpBar.applyButtonStatus.removeFontStyle(fontFamilyStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(fontFamilyStatus.getFamilyFont(FontFamilyEnum.openDyslexic.getFont()),
 							fontFamilyStatus.isFontFamily());
 				});
 
 				openSans.setOnAction(actionEvent -> {
 					fontFamilyStatus.setOptionFamily();
+					WebHelpBar.applyButtonStatus.removeFontStyle(fontFamilyStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(fontFamilyStatus.getFamilyFont(FontFamilyEnum.openSans.getFont()),
 							fontFamilyStatus.isFontFamily());
 				});
 
 				comicSans.setOnAction(actionEvent -> {
 					fontFamilyStatus.setOptionFamily();
+					WebHelpBar.applyButtonStatus.removeFontStyle(fontFamilyStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(fontFamilyStatus.getFamilyFont(FontFamilyEnum.comicSans.getFont()),
 							fontFamilyStatus.isFontFamily());
 				});
 
 				georgia.setOnAction(actionEvent -> {
 					fontFamilyStatus.setOptionFamily();
+					WebHelpBar.applyButtonStatus.removeFontStyle(fontFamilyStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(fontFamilyStatus.getFamilyFont(FontFamilyEnum.georgia.getFont()),
 							fontFamilyStatus.isFontFamily());
 				});

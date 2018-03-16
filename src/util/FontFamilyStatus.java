@@ -3,6 +3,7 @@ package util;
 public class FontFamilyStatus {
 	private boolean status = false;
 	private String defaultOption = "font-family: opendyslexic;";
+	private final String removeOption = "font-family";
 	
 	public enum FontFamilyEnum {
 
@@ -48,5 +49,9 @@ public class FontFamilyStatus {
 			defaultOption = "font-family: Georgia;";
 		}
 		return defaultOption;
+	}
+
+	public String getRemoveOption() {
+		return removeOption ;
 	}
 }

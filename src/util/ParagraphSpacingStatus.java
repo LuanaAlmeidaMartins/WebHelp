@@ -4,6 +4,7 @@ public class ParagraphSpacingStatus {
 
 	private boolean status = false;
 	private String defaultOption = "margin: 0 0 1.5em;";
+	private final String removeOption = "margin";
 
 	public enum ParagraphSpacingEnum {
 
@@ -50,6 +51,10 @@ public class ParagraphSpacingStatus {
 		 defaultOption = "margin: 0 0 2em;";
 		 }
 		return defaultOption;
+	}
+
+	public String getRemoveOption() {
+		return removeOption ;
 	}
 
 }

@@ -27,11 +27,12 @@ public class WebHelpBar extends HBox {
 		ParagraphSpacing paragraphSpacing = new ParagraphSpacing(webView);
 		CharSpacing charSpacing = new CharSpacing(webView);
 		LetterColor letterColor = new LetterColor(webView);
+		BackgroundColor backgroundColor = new BackgroundColor(webView);
 
 		// Add the Children to the Navigation Bar
 		this.getChildren().addAll(fontFamily, fontSize, new Separator(Orientation.VERTICAL), bold, italic,
 				underline, new Separator(Orientation.VERTICAL), align, new Separator(Orientation.VERTICAL),
 				lineSpacing, paragraphSpacing, charSpacing, new Separator(Orientation.VERTICAL), 
-				letterColor);
+				letterColor, backgroundColor);
 	}
 }

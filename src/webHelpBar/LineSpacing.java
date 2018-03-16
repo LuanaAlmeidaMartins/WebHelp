@@ -62,24 +62,28 @@ public class LineSpacing extends HBox{
 
 				lineSimples.setOnAction(actionEvent -> {
 					lineSpacingStatus.setOptionLineSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(lineSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(lineSpacingStatus.getLineSpacing(LineSpacingEnum.lineSimples.getLineSpacing()),
 							lineSpacingStatus.isLineSpacing());
 				});
 				
 				line15.setOnAction(actionEvent -> {
 					lineSpacingStatus.setOptionLineSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(lineSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(lineSpacingStatus.getLineSpacing(LineSpacingEnum.line15.getLineSpacing()),
 							lineSpacingStatus.isLineSpacing());
 				});
 				
 				line5.setOnAction(actionEvent -> {
 					lineSpacingStatus.setOptionLineSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(lineSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(lineSpacingStatus.getLineSpacing(LineSpacingEnum.line5.getLineSpacing()),
 							lineSpacingStatus.isLineSpacing());
 				});
 				
 				linhaDupla.setOnAction(actionEvent -> {
 					lineSpacingStatus.setOptionLineSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(lineSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(lineSpacingStatus.getLineSpacing(LineSpacingEnum.linhaDupla.getLineSpacing()),
 							lineSpacingStatus.isLineSpacing());
 				});

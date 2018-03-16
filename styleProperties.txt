@@ -17,4 +17,5 @@ charSpacing = icons/charSpacing.png
 paragraphSpacing = icons/paragraphSpacing.png
 lineSpacing = icons/lineSpacing.png
 default = -fx-font-size: 14pt;
-colorpicker =  -fx-background-image: url('/fontColor.png'); -fx-background-size: 28 28; -fx-background-position: 10px; -fx-background-repeat: no-repeat; -fx-color-label-visible: false; -fx-color-rect-width: 0px; -fx-color-rect-height: 0px;
+letterColor =  -fx-background-image: url('/fontColor.png'); -fx-background-size: 28 28; -fx-background-position: 10px; -fx-background-repeat: no-repeat; -fx-color-label-visible: false; -fx-color-rect-width: 0px; -fx-color-rect-height: 0px;
+background = -fx-background-image: url('/backgroundColor.png'); -fx-background-size: 28 28; -fx-background-position: 10px; -fx-background-repeat: no-repeat; -fx-color-label-visible: false; -fx-color-rect-width: 0px; -fx-color-rect-height: 0px;

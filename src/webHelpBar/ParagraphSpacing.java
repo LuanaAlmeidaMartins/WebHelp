@@ -46,24 +46,28 @@ public class ParagraphSpacing extends HBox{
 
 				simpleParagraph.setOnAction(actionEvent -> {
 					paragraphSpacingStatus.setOptionParagraphSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(paragraphSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(paragraphSpacingStatus.getParagraphSpacing(ParagraphSpacingEnum.simpleParagraph.getParagraphSpacing()),
 							paragraphSpacingStatus.isParagraphSpacing());
 				});
 				
 				paragraph15.setOnAction(actionEvent -> {
 					paragraphSpacingStatus.setOptionParagraphSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(paragraphSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(paragraphSpacingStatus.getParagraphSpacing(ParagraphSpacingEnum.paragraph15.getParagraphSpacing()),
 							paragraphSpacingStatus.isParagraphSpacing());
 				});
 				
 				paragraph5.setOnAction(actionEvent -> {
 					paragraphSpacingStatus.setOptionParagraphSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(paragraphSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(paragraphSpacingStatus.getParagraphSpacing(ParagraphSpacingEnum.paragraph5.getParagraphSpacing()),
 							paragraphSpacingStatus.isParagraphSpacing());
 				});
 				
 				doubleParagraph.setOnAction(actionEvent -> {
 					paragraphSpacingStatus.setOptionParagraphSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(paragraphSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(paragraphSpacingStatus.getParagraphSpacing(ParagraphSpacingEnum.doubleParagraph.getParagraphSpacing()),
 							paragraphSpacingStatus.isParagraphSpacing());
 				});

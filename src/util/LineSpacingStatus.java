@@ -2,6 +2,7 @@ package util;
 
 public class LineSpacingStatus {
 
+	private final String removeOption = "line-height";
 	private boolean status = false;
 	private String defaultOption = "line-height: 1.5em;";
 
@@ -50,5 +51,9 @@ public class LineSpacingStatus {
 			defaultOption = "line-height: 2em;";
 		}
 		return defaultOption;
+	}
+
+	public String getRemoveOption() {
+		return removeOption;
 	}
 }

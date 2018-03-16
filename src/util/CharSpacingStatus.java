@@ -4,6 +4,7 @@ public class CharSpacingStatus {
 
 	private boolean status = false;
 	private String defaultOption = "letter-spacing: 0px;";
+	private final String removeOption = "letter-spacing";
 
 	public enum CharSpacingEnum {
 
@@ -47,5 +48,9 @@ public class CharSpacingStatus {
 			defaultOption = "letter-spacing: 2px;";
 		}
 		return defaultOption;
+	}
+
+	public String getRemoveOption() {
+		return removeOption;
 	}
 }

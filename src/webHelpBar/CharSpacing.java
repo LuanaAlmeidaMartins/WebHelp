@@ -46,24 +46,26 @@ public class CharSpacing extends HBox{
 
 				small.setOnAction(actionEvent -> {
 					charSpacingStatus.setOptionCharSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(charSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(charSpacingStatus.getCharSpacing(CharSpacingEnum.small.getCharSpacing()),
 							charSpacingStatus.isCharSpacing());
 				});
 
 				medium.setOnAction(actionEvent -> {
 					charSpacingStatus.setOptionCharSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(charSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(charSpacingStatus.getCharSpacing(CharSpacingEnum.medium.getCharSpacing()),
 							charSpacingStatus.isCharSpacing());
 				});
 
 				big.setOnAction(actionEvent -> {
 					charSpacingStatus.setOptionCharSpacing();
+					WebHelpBar.applyButtonStatus.removeFontStyle(charSpacingStatus.getRemoveOption());
 					WebHelpBar.applyButtonStatus.setFontStyle(charSpacingStatus.getCharSpacing(CharSpacingEnum.big.getCharSpacing()),
 							charSpacingStatus.isCharSpacing());
 				});
 			}
 		});
-
 		this.getChildren().add(charSpacing);
 	}
 

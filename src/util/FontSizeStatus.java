@@ -7,6 +7,7 @@ import persistence.Options;
 public class FontSizeStatus {
 
 	private boolean status = false;
+	private final String removeOption = "font-size";
 
 	public enum FontSizeEnum {
 
@@ -34,7 +35,6 @@ public class FontSizeStatus {
 	public void setOptionSize() {
 		if(this.status==false) {
 			this.status = !status;
-			System.out.println("entrou if "+this.status);
 		}
 	}
 
@@ -51,9 +51,13 @@ public class FontSizeStatus {
 		if(type == FontSizeEnum.pequeno.getFont()) {
 			fontSizes = options.FillOptions(FontSizeEnum.pequeno.getFont());
 		}
-		else {
+		if(type == FontSizeEnum.medio.getFont())  {
 			fontSizes = options.FillOptions(FontSizeEnum.medio.getFont());
 		}
 		return fontSizes;
+	}
+
+	public String getRemoveOption() {
+		return removeOption ;
 	}
 }

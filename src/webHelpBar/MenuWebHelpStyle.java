@@ -51,6 +51,6 @@ public class MenuWebHelpStyle {
 	}
 	
 	public void estilo(ColorPicker colorPicker) {
-		colorPicker.setStyle(p.getProperty("colorpicker"));
+		colorPicker.setStyle(p.getProperty(colorPicker.getId()));
 	}
 }

@@ -28,7 +28,6 @@ public class NavigationBar extends HBox {
 		this.setStyle("-fx-padding: 10;" +
 				"-fx-border-insets: 5;");
 		
-
 		// Create the WebEngine
 		WebEngine webEngine = webView.getEngine();
 

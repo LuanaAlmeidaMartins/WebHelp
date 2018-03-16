@@ -12,9 +12,11 @@ public class ApplyButtonStatus {
 	private ArrayList<String> ArrayOfGeneralStyle = new ArrayList<String>();
 	private ArrayList<String> tags = new ArrayList<String>();
 	private Document doc;
-	boolean fonte = false;
+	boolean fonteStatus = false;
+	boolean backgroundStatus = false;
 	ArrayList<FontSize> sizeFont = new ArrayList<>();
-
+	Element element, body;
+	private String backgroundColor;
 
 	public ApplyButtonStatus(Document doc) {
 		Tags tags = new Tags();
@@ -28,12 +30,7 @@ public class ApplyButtonStatus {
 			System.out.println("if "+this.ArrayOfGeneralStyle+" "+status);
 		} 
 		else {
-			for(int i = 0; i < ArrayOfGeneralStyle.size();i++) {
-				if(ArrayOfGeneralStyle.get(i).equals(applyStyle)) {
-					ArrayOfGeneralStyle.remove(i);
-					System.out.println("else "+this.ArrayOfGeneralStyle+" "+status);
-				}
-			}
+			removeFontStyle(applyStyle);
 		}	
 		applyStyle();
 	}
@@ -48,9 +45,11 @@ public class ApplyButtonStatus {
 	}
 
 	public void applyStyle() {
-		Element element;
 		String styleHeader = null;
-
+		
+		body = (Element) doc.getElementsByTagName("body").item(0);
+		body.setAttribute("style", backgroundColor);
+		
 		// passa em todas as tags 
 		for (int g = 0; g < tags.size(); g++) {
 			for (int i = 0; i < doc.getElementsByTagName(tags.get(g)).getLength(); i++) {
@@ -58,13 +57,15 @@ public class ApplyButtonStatus {
 				element.setAttribute("style", getFontStyle());
 			}
 		}
-		
+
 		// somente cabeçalho
 		for (int j = 0; j < sizeFont.size(); j++) {
 			for (int i = 0; i < doc.getElementsByTagName(sizeFont.get(j).getTagName()).getLength(); i++) {
-				if(fonte) {
+				if(fonteStatus) {
 					styleHeader = getFontStyle()+" font-size: " + sizeFont.get(j).getSize();
-				} else {
+					body.setAttribute("style", backgroundColor);
+				} 
+			 else {
 					styleHeader = getFontStyle();
 				}
 				element = (Element) doc.getElementsByTagName(sizeFont.get(j).getTagName()).item(i);
@@ -77,13 +78,32 @@ public class ApplyButtonStatus {
 				}
 			}
 		}
-
-		
 	}
 
 	public void setFontStyle(ArrayList<FontSize> sizeFont, boolean status) {
-		fonte = status;
+		fonteStatus = status;
 		this.sizeFont = sizeFont;
+		
+		applyStyle();
+	}
+
+	public void removeFontStyle(String removeString) {
+		for(int i = 0; i < ArrayOfGeneralStyle.size();i++) {
+			if((ArrayOfGeneralStyle.get(i).contains(removeString))||
+					(ArrayOfGeneralStyle.get(i).equals(removeString))) {
+				ArrayOfGeneralStyle.remove(i);
+				System.out.println("else "+this.ArrayOfGeneralStyle);
+			}
+		}
+	}
+
+	public void setBackgroundStyle(String color, boolean status) {
+		this.backgroundStatus = status;
+		if(status) {
+			this.backgroundColor = color;
+		} else {
+			this.backgroundColor="";
+		}
 		applyStyle();
 	}
 }

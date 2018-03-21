@@ -1,18 +1,18 @@
 package util;
 
-public class ItalicStatus{
+public class ItalicStatus {
 
-	private boolean italic = false;
-	
-	public void setItalic() {
-		this.italic = !italic;
-	}
+  private boolean italic = false;
 
-	public boolean isItalic() {
-		return italic;
-	}
-	
-	public String getItalic() {
-		return "font-style: normal;";
-	}
+  public void setItalic() {
+    this.italic = !italic;
+  }
+
+  public boolean isItalic() {
+    return italic;
+  }
+
+  public String getItalic() {
+    return "font-style: normal;";
+  }
 }

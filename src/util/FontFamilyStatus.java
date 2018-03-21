@@ -1,57 +1,57 @@
 package util;
 
 public class FontFamilyStatus {
-	private boolean status = false;
-	private String defaultOption = "font-family: opendyslexic;";
-	private final String removeOption = "font-family";
-	
-	public enum FontFamilyEnum {
+  private boolean status = false;
+  private String defaultOption = "font-family: opendyslexic;";
+  private final String removeOption = "font-family";
 
-		openDyslexic(4), openSans(3), comicSans(2), georgia(1), none(0);
+  public enum FontFamilyEnum {
 
-		private final int valueOfFont;
+    openDyslexic(4), openSans(3), comicSans(2), georgia(1), none(0);
 
-		FontFamilyEnum(int value) {
-			valueOfFont = value;
-		}
+    private final int valueOfFont;
 
-		public int getFont() {
-			return valueOfFont;
-		}
-	}
-	
-	public boolean isFontFamily() {
-		return status;
-	}
-	
-	public void setFontFamily() {
-		this.status = !status;
-	}
-	
-	public void setOptionFamily() {
-		if(this.status==false) {
-			this.status = !status;
-			System.out.println("entrou if "+this.status);
-		}
-	}
-	
-	public String getFamilyFont(int type) {
-		if(type==FontFamilyEnum.openDyslexic.getFont()) {
-			defaultOption = "font-family: opendyslexic;";
-		} 
-		if(type == FontFamilyEnum.comicSans.getFont()) {
-			defaultOption = "font-family: \"Comic Sans MS\";";
-		}
-		if(type == FontFamilyEnum.openSans.getFont()) {
-			defaultOption = "font-family: opensans;";
-		}
-		if(type == FontFamilyEnum.georgia.getFont()) {
-			defaultOption = "font-family: Georgia;";
-		}
-		return defaultOption;
-	}
+    FontFamilyEnum(int value) {
+      valueOfFont = value;
+    }
 
-	public String getRemoveOption() {
-		return removeOption ;
-	}
+    public int getFont() {
+      return valueOfFont;
+    }
+  }
+
+  public boolean isFontFamily() {
+    return status;
+  }
+
+  public void setFontFamily() {
+    this.status = !status;
+  }
+
+  public void setOptionFamily() {
+    if (this.status == false) {
+      this.status = !status;
+      System.out.println("entrou if " + this.status);
+    }
+  }
+
+  public String getFamilyFont(int type) {
+    if (type == FontFamilyEnum.openDyslexic.getFont()) {
+      defaultOption = "font-family: opendyslexic;";
+    }
+    if (type == FontFamilyEnum.comicSans.getFont()) {
+      defaultOption = "font-family: \"Comic Sans MS\";";
+    }
+    if (type == FontFamilyEnum.openSans.getFont()) {
+      defaultOption = "font-family: opensans;";
+    }
+    if (type == FontFamilyEnum.georgia.getFont()) {
+      defaultOption = "font-family: Georgia;";
+    }
+    return defaultOption;
+  }
+
+  public String getRemoveOption() {
+    return removeOption;
+  }
 }

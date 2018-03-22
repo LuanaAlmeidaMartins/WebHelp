@@ -1,15 +1,27 @@
 package webhelp;
 
+import apply.GeneralStyle;
+import buttons.Align;
+import buttons.BackgroundColor;
+import buttons.Bold;
+import buttons.CharSpacing;
+import buttons.FontFamily;
+import buttons.FontSize;
+import buttons.HighLight;
+import buttons.Italic;
+import buttons.LetterColor;
+import buttons.LineSpacing;
+import buttons.ParagraphSpacing;
+import buttons.Ruler;
+import buttons.Underline;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.web.WebView;
-import util.ApplyButtonStatus;
 
 public class WebHelpBar extends HBox {
 
-  static ApplyButtonStatus applyButtonStatus;
+  static GeneralStyle generalStyle;
 
   public WebHelpBar(WebView webView) {
 
@@ -18,10 +30,10 @@ public class WebHelpBar extends HBox {
     this.setStyle("-fx-padding: 4; -fx-border-insets: 2;");
 
     // Create Buttons and MenuButtons
-    BoldAction bold = new BoldAction(webView);
-    FontFamilyAction fontFamily = new FontFamilyAction(webView);
-    FontSizeAction fontSize = new FontSizeAction(webView);
-    UnderlineButton underline = new UnderlineButton(webView);
+    Bold bold = new Bold(webView);
+    FontFamily fontFamily = new FontFamily(webView);
+    FontSize fontSize = new FontSize(webView);
+    Underline underline = new Underline(webView);
     Align align = new Align(webView);
     Italic italic = new Italic(webView);
     LineSpacing lineSpacing = new LineSpacing(webView);

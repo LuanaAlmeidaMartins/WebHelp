@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import util.FontSize;
+import status.FontSize;
 
 public class Options {
 

@@ -54,7 +54,7 @@ public class WebHelpStyle {
   }
 
   public void estilo(ColorPicker colorPicker) {
-    colorPicker.setPrefHeight(36);
+    colorPicker.setPrefHeight(38);
     colorPicker.setPrefWidth(68);
     colorPicker.getStyleClass().addAll("color-picker", "split-button");
     colorPicker.setStyle(property.getProperty(colorPicker.getId()));

@@ -61,6 +61,7 @@ public class HighLight extends HBox {
         + "newNode.setAttribute(\"style\", \"background-color:" + string + ";\");"
         + "range.surroundContents(newNode); ");
   }
+  
 
   private void createButton() {
 

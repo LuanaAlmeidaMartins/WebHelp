@@ -29,9 +29,6 @@ public class NavigationBar extends HBox {
     // Set Spacing
     this.setSpacing(4);
 
-    // Set the Style-properties of the Navigation Bar
-    this.setStyle("-fx-padding: 10;-fx-border-insets: 5;");
-
     // Create the TextField
     TextField pageUrl = new TextField();
     pageUrl.setText(homePageUrl);
@@ -116,7 +113,6 @@ public class NavigationBar extends HBox {
         history.go(1);
       }
     });
-
     this.getChildren().addAll(backButton, forwardButton, refreshButton, pageUrl);
     webEngine.load(homePageUrl);
   }

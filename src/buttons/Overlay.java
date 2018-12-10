@@ -1,5 +1,8 @@
 package buttons;
 
+import org.w3c.dom.Document;
+
+import apply.ApplyStyle;
 import javafx.concurrent.Worker.State;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,11 +34,12 @@ public class Overlay extends HBox{
   private WebView webView;
   private WebEngine webEngine;
   private ColorPicker overlayButton;
-  private StackPane stack ;
+  private Canvas overlay;
   
-  public Overlay(WebView webView) {
+  public Overlay(WebView webView, Canvas overlay) {
     this.webView = webView;
     this.webEngine = webView.getEngine();
+    this.overlay = overlay;
     createButton();
     actionButton();
     
@@ -44,22 +48,26 @@ public class Overlay extends HBox{
   private void actionButton() {
     OverlayColorStatus overlayColorStatus = new OverlayColorStatus();
     ColorConverter color = new ColorConverter();
+    
     webEngine.getLoadWorker().stateProperty().addListener((obs, oldValue, newValue) -> {
       if (newValue == State.SUCCEEDED) {
         overlayButton.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+          
           @Override
           public void handle(MouseEvent e) {
             if ((e.getSceneX() >= 720 && e.getSceneX() <= 762)
                 && (e.getSceneY() >= 50 && e.getSceneY() <= 82)) {
               overlayButton.hide();
-              createOverlay(overlayColorStatus.getColor());
+              createOverlay(overlayColorStatus);
             } else {
               overlayButton.setOnAction((ActionEvent t) -> {
-                overlayColorStatus.setColorName(color.converterColor(overlayButton.getValue()));
-                createOverlay(overlayColorStatus.getColor());
+                System.out.println(overlayButton.getValue());
+                overlayColorStatus.setColor(overlayButton.getValue());
+                createOverlay(overlayColorStatus);
               });
             }
           }
+
         });
       }
     });
@@ -77,19 +85,12 @@ public class Overlay extends HBox{
     
   }
 
-  public Canvas createOverlay(String color) {
-    System.out.println("color: "+color);
-    Canvas overlay = new Canvas(1300,600);
-    overlay.setOpacity(0.5);
+  public void createOverlay(OverlayColorStatus color) {
     GraphicsContext gc = overlay.getGraphicsContext2D();
-    gc.setFill(Color.RED);
+    overlay.setOpacity(0.5);
+    gc.setFill(Color.color(color.getRed(), color.getGreen(), color.getBlue()));
     gc.fillRect(0,-20, 1600,700);
     gc.fill();
-    
-    stack.getChildren().addAll(webView, overlay);
-    stack.setMargin(webView, new Insets(12, 12, 10, 28));
-    
-    return overlay;
   }
   
 }

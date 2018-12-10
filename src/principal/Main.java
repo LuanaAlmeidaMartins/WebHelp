@@ -58,24 +58,17 @@ public class Main extends Application {
     NavigationBar navigationBar = new NavigationBar(browser, homePageUrl);
 
     // Create the WebHelp bar
-    WebHelpBar webHelpBar = new WebHelpBar(browser);
+    Canvas overlay = new Canvas(1300,600);
+    WebHelpBar webHelpBar = new WebHelpBar(browser, overlay);
 
     StackPane stack = new StackPane();
-    Canvas overlay = new Canvas(1300,600);
-    overlay.setOpacity(0.5);
-    GraphicsContext gc = overlay.getGraphicsContext2D();
-    gc.setFill(Color.RED);
-    gc.fillRect(0,-20, 1600,700);
-    gc.fill();
-    
     stack.getChildren().addAll(browser, overlay);
     stack.setMargin(browser, new Insets(12, 12, 10, 28));
     
     // Create the VBox, add the navigation, menu and webview to the VBox and
     root.getChildren().addAll(navigationBar, webHelpBar);
-   root.getChildren().add(stack);
+    root.getChildren().add(stack);
     
-    root.setMargin(browser, new Insets(12, 12, 10, 28));
 
     // Create the Scene, add the Scene to the Stage and display the Stage
     Scene scene = new Scene(root,1600,900);

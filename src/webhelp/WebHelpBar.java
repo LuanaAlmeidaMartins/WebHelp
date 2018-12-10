@@ -16,6 +16,7 @@ import buttons.ParagraphSpacing;
 import buttons.Ruler;
 import buttons.Underline;
 import javafx.geometry.Orientation;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -25,9 +26,10 @@ import principal.Main;
 public class WebHelpBar extends HBox {
 
   static GeneralStyle generalStyle;
+  Canvas overlay;
 
-  public WebHelpBar(WebView webView) {
-    
+  public WebHelpBar(WebView webView, Canvas overlay) {
+    this.overlay = overlay;
     this.setSpacing(2);
     this.setStyle("-fx-padding: 0, 0, 0, 0;");
 
@@ -44,15 +46,15 @@ public class WebHelpBar extends HBox {
     LetterColor letterColor = new LetterColor(webView);
     BackgroundColor backgroundColor = new BackgroundColor(webView);
     HighLight highLight = new HighLight(webView);
-    Ruler ruler = new Ruler(webView);
-    Overlay overlay = new Overlay(webView);
+    Ruler ruler = new Ruler(webView, this.overlay);
+    Overlay overlay2 = new Overlay(webView, this.overlay);
 
     // Add the Children to the Navigation Bar
     this.getChildren().addAll(fontFamily, fontSize, new Separator(Orientation.VERTICAL), bold,
         italic, underline, new Separator(Orientation.VERTICAL), align,
         new Separator(Orientation.VERTICAL), lineSpacing, paragraphSpacing, charSpacing,
         new Separator(Orientation.VERTICAL), letterColor, backgroundColor,
-        new Separator(Orientation.VERTICAL), highLight, ruler, overlay);
+        new Separator(Orientation.VERTICAL), highLight, ruler, overlay2);
   }
 
 }

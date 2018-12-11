@@ -1,5 +1,5 @@
 Pequeno = -fx-font-size: 14pt;
-M�dio = -fx-font-size: 18pt;
+Médio = -fx-font-size: 18pt;
 Grande = -fx-font-size: 22pt;
 Enorme = -fx-font-size: 28pt;
 Open.Dyslexic = -fx-font-size: 14pt; -fx-font-family: 'opendyslexic'; src: url('OpenDyslexic-Regular.ttf');
@@ -21,4 +21,5 @@ letterColor =  -fx-background-image: url('/fontColor.png'); -fx-background-size:
 background = -fx-background-image: url('/backgroundColor.png'); -fx-background-size: 28 28; -fx-background-position: 10px; -fx-background-repeat: no-repeat; -fx-color-label-visible: false; -fx-color-rect-width: 0px; -fx-color-rect-height: 0px;
 highlight = -fx-background-image: url('/highlight.png'); -fx-background-size: 28 28; -fx-background-position: 10px; -fx-background-repeat: no-repeat; -fx-color-label-visible: false; -fx-color-rect-width: 0px; -fx-color-rect-height: 0px;
 ruler = icons/ruler.png
+leitor = icons/leitor.png
 overlay = -fx-background-image: url('/overlay.png'); -fx-background-size: 28 28; -fx-background-position: 10px; -fx-background-repeat: no-repeat; -fx-color-label-visible: false; -fx-color-rect-width: 0px; -fx-color-rect-height: 0px;

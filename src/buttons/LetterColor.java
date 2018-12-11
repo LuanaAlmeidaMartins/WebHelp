@@ -41,8 +41,7 @@ public class LetterColor extends HBox implements Types{
           @Override
           public void handle(MouseEvent e) {
 
-            if ((e.getSceneX() >= 570 && e.getSceneX() <= 612)
-                && (e.getSceneY() >= 50 && e.getSceneY() <= 82)) {
+            if (!e.getPickResult().toString().contains("arrow-button")) {
               colorPicker.hide();
               letterColorStatus.setStatusMenu();
               letterStyle.addFontStyle(letterColorStatus.getStringToAdd(none),

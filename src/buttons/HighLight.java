@@ -3,6 +3,7 @@ package buttons;
 import javafx.concurrent.Worker.State;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -17,9 +18,11 @@ public class HighLight extends HBox {
   private WebEngine webEngine;
   private ColorPicker highlightButton;
   private WebView webView;
+  private Canvas overlay;
 
-  public HighLight(WebView webView) {
+  public HighLight(WebView webView, Canvas overlay) {
     this.webView = webView;
+    this.overlay = overlay;
     this.webEngine = webView.getEngine();
     createButton();
     actionButton();
@@ -38,10 +41,10 @@ public class HighLight extends HBox {
         highlightButton.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
           @Override
           public void handle(MouseEvent e) {
-            if ((e.getSceneX() >= 720 && e.getSceneX() <= 762)
-                && (e.getSceneY() >= 50 && e.getSceneY() <= 82)) {
+            if (!e.getPickResult().toString().contains("arrow-button")) {
               highlightButton.hide();
-              aplicarCor(highLightColorStatus.getColor());
+              overlay.setVisible(false);
+              //aplicarCor(highLightColorStatus.getColor());
             } else {
               highlightButton.setOnAction((ActionEvent t) -> {
                 highLightColorStatus.setColorName(color.converterColor(highlightButton.getValue()));
@@ -52,7 +55,6 @@ public class HighLight extends HBox {
         });
       }
     });
-
   }
 
   private void aplicarCor(String string) {

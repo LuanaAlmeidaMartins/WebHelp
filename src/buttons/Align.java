@@ -23,7 +23,6 @@ public class Align extends HBox implements Types{
     this.webEngine = webView.getEngine();
     createButton();
     actionButton();
-//    "mbrola.base", "/home/luana/Desenvolvimento/Eclipse/workspace/Hello/mbrola"
   }
 
   void createButton() {

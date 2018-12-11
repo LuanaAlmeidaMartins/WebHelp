@@ -9,6 +9,7 @@ import buttons.FontFamily;
 import buttons.FontSize;
 import buttons.HighLight;
 import buttons.Italic;
+import buttons.Leitor;
 import buttons.LetterColor;
 import buttons.LineSpacing;
 import buttons.Overlay;
@@ -19,9 +20,7 @@ import javafx.geometry.Orientation;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
-import principal.Main;
 
 public class WebHelpBar extends HBox {
 
@@ -45,16 +44,17 @@ public class WebHelpBar extends HBox {
     CharSpacing charSpacing = new CharSpacing(webView);
     LetterColor letterColor = new LetterColor(webView);
     BackgroundColor backgroundColor = new BackgroundColor(webView);
-    HighLight highLight = new HighLight(webView);
+    Leitor leitor = new Leitor(webView, this.overlay);
     Ruler ruler = new Ruler(webView, this.overlay);
     Overlay overlay2 = new Overlay(webView, this.overlay);
+    HighLight highLight = new HighLight(webView, this.overlay);
 
     // Add the Children to the Navigation Bar
     this.getChildren().addAll(fontFamily, fontSize, new Separator(Orientation.VERTICAL), bold,
         italic, underline, new Separator(Orientation.VERTICAL), align,
         new Separator(Orientation.VERTICAL), lineSpacing, paragraphSpacing, charSpacing,
         new Separator(Orientation.VERTICAL), letterColor, backgroundColor,
-        new Separator(Orientation.VERTICAL), highLight, ruler, overlay2);
+        new Separator(Orientation.VERTICAL), ruler, overlay2,  highLight, leitor);
   }
 
 }

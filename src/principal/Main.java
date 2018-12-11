@@ -30,8 +30,6 @@ import javafx.scene.text.TextBuilder;
 import javafx.scene.paint.Color;
 
 public class Main extends Application {
-  
-   public static VBox root = new VBox();
 
   @SuppressWarnings("static-access")
   @Override
@@ -60,14 +58,16 @@ public class Main extends Application {
     // Create the WebHelp bar
     Canvas overlay = new Canvas(1300,600);
     WebHelpBar webHelpBar = new WebHelpBar(browser, overlay);
-
+    overlay.setAccessibleText("aa");
     StackPane stack = new StackPane();
     stack.getChildren().addAll(browser, overlay);
     stack.setMargin(browser, new Insets(12, 12, 10, 28));
     
     // Create the VBox, add the navigation, menu and webview to the VBox and
+
+    VBox root = new VBox();
     root.getChildren().addAll(navigationBar, webHelpBar);
-    root.getChildren().add(stack);
+    root.getChildren().addAll(stack);
     
 
     // Create the Scene, add the Scene to the Stage and display the Stage
@@ -76,7 +76,7 @@ public class Main extends Application {
    
     // root.getChildren().add(g);
     stage.setScene(scene);
-    webEngine.load(homePageUrl);
+  //  webEngine.load(homePageUrl);
     stage.show();
   }
   

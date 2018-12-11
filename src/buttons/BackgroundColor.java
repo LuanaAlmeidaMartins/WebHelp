@@ -40,9 +40,7 @@ public class BackgroundColor extends HBox implements Types {
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
-
-                if ((e.getSceneX() >= 640 && e.getSceneX() <= 684)
-                    && (e.getSceneY() >= 48 && e.getSceneY() <= 84)) {
+                if (!e.getPickResult().toString().contains("arrow-button")) {
                   colorPickerBackground.hide();
                   backgroundStatus.setStatusMenu();
                   backgroundStyle.setBackgroundStyle(backgroundStatus.getStringToAdd(none),

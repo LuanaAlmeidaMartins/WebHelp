@@ -35,7 +35,6 @@ public class Underline extends HBox implements Types{
   }
 
   public void actionButton() {
-
     UnderlineStatus underlineStatus = new UnderlineStatus();
 
     webEngine.getLoadWorker().stateProperty().addListener((obs, oldValue, newValue) -> {

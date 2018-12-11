@@ -2,14 +2,15 @@ package status;
 
 import javafx.scene.paint.Color;
 
-public class OverlayColorStatus{
+public class OverlayColorStatus {
 
-  private String defaultOption = "#ffff00;";
+  private boolean status = false;
   double blue, red, green;
 
-
-  public String getColor() {
-    return defaultOption;
+  public OverlayColorStatus() {
+    this.blue = 0.3019607961177826;
+    this.green=1.0;
+    this.red=1.0; 
   }
 
   public void setColor(Color value) {
@@ -18,22 +19,30 @@ public class OverlayColorStatus{
     this.red=value.getRed();   
   }
 
-  public String getDefaultOption() {
-    return defaultOption;
-  }
-
   public double getBlue() {
-    System.out.println(blue);
     return blue;
   }
 
   public double getRed() {
-    System.out.println(red);
     return red;
   }
 
   public double getGreen() {
-    System.out.println(green);
     return green;
   }
+  
+  public boolean isActive() {
+    return status;
+  }
+
+  public void setStatusMenu() {
+    this.status = !status;
+  }
+
+  public void setStatusSubMenu() {
+    if (!this.status) {
+      this.status = !status;
+    }
+  }
+
 }

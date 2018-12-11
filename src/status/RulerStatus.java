@@ -1,6 +1,6 @@
 package status;
 
-public class RulerStatus{
+public class RulerStatus {
 
   private double defaultOption = 80;
   private boolean status = false;
@@ -34,5 +34,4 @@ public class RulerStatus{
       this.status = !status;
     }
   }
-
 }

@@ -30,12 +30,14 @@ public class ParagraphSpacing extends HBox implements Types{
 
   private void actionButton() {
     ParagraphSpacingStatus spacingStatus = new ParagraphSpacingStatus();
+    
     webEngine.getLoadWorker().stateProperty().addListener((obs, oldValue, newValue) -> {
       if (newValue == State.SUCCEEDED) {
         Document doc = webEngine.getDocument();
         ApplyStyle spacingStyle = new ApplyStyle(doc);
 
         paragraphSpacing.setOnMouseClicked(new EventHandler<MouseEvent>() {
+          
           @Override
           public void handle(MouseEvent event) {
             spacingStatus.setStatusMenu();
@@ -87,7 +89,6 @@ public class ParagraphSpacing extends HBox implements Types{
         });
       }
     });
-
     this.getChildren().add(paragraphSpacing);
   }
 
